@@ -21,12 +21,15 @@ app.get("/setcookie", (req, res) => {
 });
 app.get("/getcookie", (req, res) => {
   if (!req.cookies.xabiToken) return res.send("NO HAY COOKIE");
-  console.log(req.cookies);
   res.send(req.cookies.xabiToken);
 });
 
 app.get("/deletecookie", (req, res) => {
-  res.clearCookie("xabiToken");
+  res.clearCookie("xabiToken", {
+    httpOnly: true, // Asegúrate de que coincida con la configuración inicial de la cookie
+    secure: true, // Si usas HTTPS, esta opción debe ser true
+    sameSite: "None", // Debe coincidir con la configuración de SameSite de la cookie
+  });
   res.send("cookie eliminada");
 });
 
