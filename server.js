@@ -15,7 +15,6 @@ app.get("/setcookie", (req, res) => {
     httpOnly: true,
     maxAge: 10000,
     sameSite: "none",
-    secure: true,
   });
   res.send("Hello Token");
 });
