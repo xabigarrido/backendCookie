@@ -22,7 +22,7 @@ app.get("/setcookie", (req, res) => {
 app.get("/getcookie", (req, res) => {
   if (!req.cookies.xabiToken) return res.send("NO HAY COOKIE");
   console.log(req.cookies);
-  res.send("tus cookies");
+  res.send(req.cookies.xabiToken);
 });
 
 app.get("/deletecookie", (req, res) => {
