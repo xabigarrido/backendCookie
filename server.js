@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.json({ title: "prueba mundo" });
+  res.json({ title: "prueba mundos" });
 });
 
 // Ruta para establecer la cookie
