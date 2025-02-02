@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 app.get("/setcookie", (req, res) => {
   res.cookie("xabiToken", "my new cookie", {
     httpOnly: false, // Permite acceso desde JS
-    maxAge: 1000 * 60 * 60 * 24, // La cookie durará 1 día
+    maxAge: 7000,
     sameSite: "None", // Necesario para cookies cross-origin
     secure: process.env.NODE_ENV === "production", // Solo usar HTTPS en producción
   });
