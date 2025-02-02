@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 // Ruta para establecer la cookie
 app.get("/setcookie", (req, res) => {
-  res.cookie("xabiToken", "my new cookie", {
+  res.cookie("xabiToken", "Xabi Garrido", {
     httpOnly: false, // Permite acceso desde JS
     maxAge: 7000,
     sameSite: "None", // Necesario para cookies cross-origin
