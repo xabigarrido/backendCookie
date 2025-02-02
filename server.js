@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 app.get("/setcookie", (req, res) => {
   res.cookie("xabiToken", "my new cookie", {
-    httpOnly: true,
+    httpOnly: false,
     maxAge: 10000,
     sameSite: "none",
     secure: true,
@@ -26,7 +26,7 @@ app.get("/getcookie", (req, res) => {
 
 app.get("/deletecookie", (req, res) => {
   res.clearCookie("xabiToken", {
-    httpOnly: true, // Asegúrate de que coincida con la configuración inicial de la cookie
+    httpOnly: false, // Asegúrate de que coincida con la configuración inicial de la cookie
     secure: true, // Si usas HTTPS, esta opción debe ser true
     sameSite: "None", // Debe coincidir con la configuración de SameSite de la cookie
   });
