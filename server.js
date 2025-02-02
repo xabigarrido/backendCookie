@@ -17,7 +17,7 @@ app.get("/setcookie", (req, res) => {
     sameSite: "none",
     secure: true,
   });
-  res.send("Hello Token");
+  res.send(req.cookies.xabiToken);
 });
 app.get("/getcookie", (req, res) => {
   if (!req.cookies.xabiToken) return res.send("NO HAY COOKIE");
