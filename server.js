@@ -11,13 +11,14 @@ app.get("/", (req, res) => {
   res.json({ title: "prueba mundo" });
 });
 app.get("/setcookie", (req, res) => {
-  res.cookie("xabiToken", "my new cookie", {
+  const cookie = res.cookie("xabiToken", "my new cookie", {
     httpOnly: true,
     maxAge: 10000,
     sameSite: "none",
     secure: true,
   });
-  res.send(req.cookies.xabiToken);
+  console.log(cookie);
+  res.send(cookie);
 });
 app.get("/getcookie", (req, res) => {
   if (!req.cookies.xabiToken) return res.send("NO HAY COOKIE");
